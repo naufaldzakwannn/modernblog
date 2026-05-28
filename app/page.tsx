@@ -9,7 +9,9 @@ export default function Home() {
   return (
     <main className="grain bg-paper min-h-screen">
       <Navbar />
-      <Hero />
+      <div style={{ paddingTop: "80px" }}>
+        <Hero />
+      </div>
       <FeaturedPost />
       <PostGrid />
       <Aside />
