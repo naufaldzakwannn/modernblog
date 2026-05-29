@@ -70,7 +70,7 @@ const posts = [
   },
 ];
 
-function PostCard({ post, featured = false }: { post: typeof posts[0]; featured?: boolean }) {
+function PostCard({ post, featured = false }: { post: (typeof posts)[0]; featured?: boolean }) {
   return (
     <article className={`group border border-ink/10 overflow-hidden hover:border-ink/30 transition-colors ${featured ? "lg:col-span-2" : ""}`}>
       {/* Color bar */}
@@ -78,26 +78,17 @@ function PostCard({ post, featured = false }: { post: typeof posts[0]; featured?
 
       <div className="p-7">
         <div className="flex items-center justify-between mb-5">
-          <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-ink/40">
-            {post.category}
-          </span>
-          <span className="font-mono text-[10px] tracking-widest uppercase px-2 py-0.5 border border-ink/10 text-ink/40">
-            {post.tag}
-          </span>
+          <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-ink/40">{post.category}</span>
+          <span className="font-mono text-[10px] tracking-widest uppercase px-2 py-0.5 border border-ink/10 text-ink/40">{post.tag}</span>
         </div>
 
-        <h3 className={`font-display font-bold leading-tight mb-3 group-hover:text-rust transition-colors ${featured ? "text-3xl md:text-4xl" : "text-xl"}`}>
-          {post.title}
-        </h3>
+        <h3 className={`font-display font-bold leading-tight mb-3 group-hover:text-rust transition-colors ${featured ? "text-3xl md:text-4xl" : "text-xl"}`}>{post.title}</h3>
 
-        <p className="font-body text-ink/55 leading-relaxed mb-6 text-sm">
-          {post.excerpt}
-        </p>
+        <p className="font-body text-ink/55 leading-relaxed mb-6 text-sm">{post.excerpt}</p>
 
         <div className="flex items-center justify-between pt-5 border-t border-ink/8">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full flex items-center justify-center text-paper text-[10px] font-bold font-display"
-              style={{ backgroundColor: post.color }}>
+            <div className="w-6 h-6 rounded-full flex items-center justify-center text-paper text-[10px] font-bold font-display" style={{ backgroundColor: post.color }}>
               {post.author[0]}
             </div>
             <div>
@@ -119,7 +110,7 @@ function PostCard({ post, featured = false }: { post: typeof posts[0]; featured?
 
 export default function PostGrid() {
   return (
-    <section id="essays" className="py-20 px-6 max-w-7xl mx-auto">
+    <section id="essays" className="py-20 px-8 w-full" style={{ maxWidth: "1280px", margin: "0 auto" }}>
       <div className="hr-ornament mb-12">
         <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-rust">◆ Recent Essays</span>
       </div>
@@ -134,10 +125,7 @@ export default function PostGrid() {
       </div>
 
       <div className="flex justify-center mt-12">
-        <Link
-          href="#"
-          className="font-mono text-xs tracking-widest uppercase border border-ink/20 px-8 py-4 hover:bg-ink hover:text-paper transition-colors"
-        >
+        <Link href="#" className="font-mono text-xs tracking-widest uppercase border border-ink/20 px-8 py-4 hover:bg-ink hover:text-paper transition-colors">
           Load More Essays
         </Link>
       </div>

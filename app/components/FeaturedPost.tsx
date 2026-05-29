@@ -3,7 +3,7 @@ import { ArrowUpRight, Clock } from "lucide-react";
 
 export default function FeaturedPost() {
   return (
-    <section id="featured" className="py-20 px-6 max-w-7xl mx-auto">
+    <section id="featured" className="py-20 px-8 w-full" style={{ maxWidth: "1280px", margin: "0 auto" }}>
       {/* Section label */}
       <div className="hr-ornament mb-12">
         <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-rust">◆ Featured</span>
@@ -30,16 +30,10 @@ export default function FeaturedPost() {
             <line x1="0" y1="250" x2="600" y2="250" stroke="#f5f0e8" strokeOpacity="0.05" strokeWidth="1" />
             <line x1="300" y1="0" x2="300" y2="500" stroke="#f5f0e8" strokeOpacity="0.05" strokeWidth="1" />
             {/* Grid dots */}
-            {Array.from({length: 6}, (_, row) =>
-              Array.from({length: 8}, (_, col) => (
-                <circle key={`${row}-${col}`} cx={col * 90 + 30} cy={row * 90 + 30} r="1.5" fill="#f5f0e8" opacity="0.15" />
-              ))
-            )}
+            {Array.from({ length: 6 }, (_, row) => Array.from({ length: 8 }, (_, col) => <circle key={`${row}-${col}`} cx={col * 90 + 30} cy={row * 90 + 30} r="1.5" fill="#f5f0e8" opacity="0.15" />))}
           </svg>
           <div className="absolute bottom-6 left-6 right-6">
-            <span className="font-mono text-[10px] tracking-widest uppercase text-paper/40">
-              Illustration
-            </span>
+            <span className="font-mono text-[10px] tracking-widest uppercase text-paper/40">Illustration</span>
           </div>
         </div>
 
@@ -47,9 +41,7 @@ export default function FeaturedPost() {
         <div className="lg:col-span-6 p-10 flex flex-col justify-between bg-cream">
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <span className="bg-rust text-paper font-mono text-[10px] tracking-widest uppercase px-2 py-1">
-                Long Read
-              </span>
+              <span className="bg-rust text-paper font-mono text-[10px] tracking-widest uppercase px-2 py-1">Long Read</span>
               <span className="flex items-center gap-1 font-mono text-[10px] tracking-widest uppercase text-ink/40">
                 <Clock size={10} />
                 12 min read
@@ -57,23 +49,16 @@ export default function FeaturedPost() {
             </div>
 
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">
-              The Art of Slow{" "}
-              <em className="italic">Thinking</em>{" "}
-              in a Fast World
+              The Art of Slow <em className="italic">Thinking</em> in a Fast World
             </h2>
 
             <p className="font-body text-ink/60 leading-relaxed mb-8 text-base">
-              Our brains are being rewired by the attention economy. Every notification, 
-              every refresh, every swipe trains us to crave the next dopamine hit. 
-              But the deepest insights have always emerged from the opposite — sustained, 
+              Our brains are being rewired by the attention economy. Every notification, every refresh, every swipe trains us to crave the next dopamine hit. But the deepest insights have always emerged from the opposite — sustained,
               patient, almost meditative focus.
             </p>
 
             <blockquote className="border-l-2 border-rust pl-5 mb-8">
-              <p className="font-display text-xl italic text-ink/70 leading-relaxed">
-                &ldquo;The quality of your thinking is determined by the depth of your attention,
-                not the speed of your consumption.&rdquo;
-              </p>
+              <p className="font-display text-xl italic text-ink/70 leading-relaxed">&ldquo;The quality of your thinking is determined by the depth of your attention, not the speed of your consumption.&rdquo;</p>
             </blockquote>
           </div>
 
@@ -87,10 +72,7 @@ export default function FeaturedPost() {
                 <p className="font-mono text-[10px] text-ink/40 uppercase tracking-widest">May 24, 2026</p>
               </div>
             </div>
-            <Link
-              href="#"
-              className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase text-rust hover:text-ink transition-colors group"
-            >
+            <Link href="#" className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase text-rust hover:text-ink transition-colors group">
               Read
               <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>

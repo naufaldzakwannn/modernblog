@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="grain bg-paper min-h-screen">
       <Navbar />
-      <div style={{ paddingTop: "80px" }}>
+      <div style={{ paddingTop: "80px", overflowX: "hidden" }}>
         <Hero />
       </div>
       <FeaturedPost />

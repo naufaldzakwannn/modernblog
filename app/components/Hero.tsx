@@ -18,7 +18,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pt-36 pb-0 px-6 max-w-7xl mx-auto flex flex-col">
+    <section className="pt-36 pb-0 px-8 w-full flex flex-col" style={{ maxWidth: "1280px", margin: "0 auto" }}>
       {/* Top bar */}
       <div className="flex items-center justify-between mb-10 border-b border-ink/10 pb-4">
         <span className="font-mono text-[11px] tracking-widest uppercase text-ink/40">Vol. 01 — Est. 2024</span>
@@ -27,21 +27,21 @@ export default function Hero() {
       </div>
 
       {/* Hero content */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Main headline */}
-        <div className="lg:col-span-8 space-y-6">
+        <div className="space-y-6">
           <p className="font-mono text-xs tracking-[0.15em] uppercase text-rust flex items-center gap-2">
             <span className="w-8 h-px bg-rust inline-block" />
             Featured Essay
           </p>
-          <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] leading-[0.9] font-bold tracking-tight">
+          <h1 className="font-display text-[clamp(2.5rem,5vw,5rem)] leading-[0.95] font-bold tracking-tight">
             The Art of <em className="italic text-rust">Slow</em>
             <br />
             Thinking in a
             <br />
             Fast World
           </h1>
-          <p className="font-body text-lg text-ink/60 max-w-xl leading-relaxed">In an age of infinite scroll and dopamine loops, the most radical act is to pause. To sit with a thought until it reveals something true.</p>
+          <p className="font-body text-base text-ink/60 leading-relaxed">In an age of infinite scroll and dopamine loops, the most radical act is to pause. To sit with a thought until it reveals something true.</p>
           <div className="flex items-center gap-6 pt-4">
             <Link href="#featured" className="inline-flex items-center gap-2 bg-ink text-paper font-mono text-xs tracking-widest uppercase px-6 py-4 hover:bg-rust transition-colors group">
               Read Essay
@@ -54,9 +54,9 @@ export default function Hero() {
         </div>
 
         {/* Right column */}
-        <div className="lg:col-span-4 space-y-4">
+        <div className="space-y-4">
           <div className="relative">
-            <div className="font-display text-[160px] font-bold text-ink/[0.04] leading-none select-none absolute -top-6 -right-2">01</div>
+            <div className="font-display text-[140px] font-bold text-ink/[0.04] leading-none select-none absolute -top-4 -right-2">01</div>
             <div className="relative border border-ink/10 p-6 bg-cream">
               <p className="font-mono text-[10px] tracking-widest uppercase text-ink/40 mb-4">This Issue</p>
               <ul className="space-y-3">
@@ -81,6 +81,11 @@ export default function Hero() {
                 <div className="font-mono text-[9px] tracking-widest uppercase text-paper/50 mt-1">{s.label}</div>
               </div>
             ))}
+          </div>
+
+          <div className="border-l-2 border-rust pl-4 py-2">
+            <p className="font-display text-base italic text-ink/60 leading-snug">&ldquo;The deepest insights emerge from sustained, patient focus.&rdquo;</p>
+            <span className="font-mono text-[9px] tracking-widest uppercase text-ink/30 mt-2 block">— The Editorial</span>
           </div>
         </div>
       </div>
